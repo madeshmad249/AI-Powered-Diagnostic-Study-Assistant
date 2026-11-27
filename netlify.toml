@@ -1,0 +1,11 @@
+# The deployable site is the Vite + React app in frontend/.
+# The Python (FastAPI) backend in backend/ is not built or deployed by Netlify.
+[build]
+  base    = "frontend"
+  # Install deps explicitly so the build works even where no install step runs first
+  command = "npm ci && npm run build"
+  publish = "dist"   # relative to base -> frontend/dist
+
+[build.environment]
+  # Vite 8 requires Node ^20.19.0 || >=22.12.0
+  NODE_VERSION = "22"
