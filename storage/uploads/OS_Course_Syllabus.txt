@@ -1,0 +1,23 @@
+COURSE SYLLABUS: CS301 - OPERATING SYSTEMS & SYSTEM ARCHITECTURE
+Total Credits: 4 | Examination Weightage: 100 Marks
+
+MODULE 1: PROCESS MANAGEMENT & CPU SCHEDULING
+- Topic 1.1: Process States, Process Control Block (PCB), Context Switching
+- Topic 1.2: CPU Scheduling Algorithms: FCFS, SJF, Round Robin, Multi-level Queue
+- Topic 1.3: Inter-Process Communication (IPC): Shared Memory, Message Passing
+
+MODULE 2: CONCURRENCY, SYNCHRONIZATION & DEADLOCKS
+- Topic 2.1: The Critical Section Problem, Race Conditions, Peterson's Algorithm
+- Topic 2.2: Synchronization Primitives: Semaphores, Mutexes, Monitors
+- Topic 2.3: Deadlocks: Coffman Conditions, Deadlock Detection, Banker's Algorithm for Avoidance
+
+MODULE 3: MEMORY MANAGEMENT & VIRTUAL MEMORY
+- Topic 3.1: Logical vs Physical Addressing, Contiguous Allocation, Fragmentation
+- Topic 3.2: Paging Architecture, Page Tables, Translation Lookaside Buffer (TLB)
+- Topic 3.3: Virtual Memory, Demand Paging, Page Fault Handling, Page Replacement Algorithms (FIFO, LRU, Optimal)
+- Topic 3.4: Thrashing, Working Set Model
+
+MODULE 4: STORAGE & FILE SYSTEM IMPLEMENTATION
+- Topic 4.1: File Attributes, Directory Structures, Inodes
+- Topic 4.2: File Allocation Methods: Contiguous, Linked, Indexed Allocation
+- Topic 4.3: Secondary Storage Management, Disk Scheduling Algorithms (FCFS, SSTF, SCAN, C-SCAN)

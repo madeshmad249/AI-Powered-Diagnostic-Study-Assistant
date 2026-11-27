@@ -1,0 +1,46 @@
+PAST EXAMINATION QUESTIONS (2022 - 2024 COMPILATION)
+Filename: OS_Past_Exams_2022_2024.txt
+
+[Question 1] (Final Exam 2024)
+Topic: Memory Management & Virtual Memory
+Calculate the Effective Access Time (EAT) for a demand-paged system with a memory access time of 100ns and page fault service time of 8ms. If hit ratio of TLB is 95%, evaluate the maximum acceptable page fault rate.
+
+[Question 2] (Midterm 2024)
+Topic: Memory Management & Virtual Memory
+Explain the mechanics of page fault handling step-by-step from instruction trap to instruction restart. Distinguish between a page fault and a TLB miss.
+
+[Question 3] (Final Exam 2023)
+Topic: Memory Management & Virtual Memory
+What is thrashing? How does the operating system detect thrashing, and how does the working set model prevent severe drops in CPU utilization?
+
+[Question 4] (Final Exam 2023)
+Topic: Memory Management & Virtual Memory
+Compare FIFO, LRU, and Optimal page replacement algorithms given the page reference string: 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2 with 3 physical frames.
+
+[Question 5] (Final Exam 2022)
+Topic: Memory Management & Virtual Memory
+Describe the structure and purpose of the Translation Lookaside Buffer (TLB). Why are two memory accesses required without a TLB?
+
+[Question 6] (Midterm 2023)
+Topic: Concurrency, Synchronization & Deadlocks
+State the four Coffman conditions necessary for deadlock to occur. Show how breaking the Hold and Wait condition prevents deadlock.
+
+[Question 7] (Final Exam 2024)
+Topic: Concurrency, Synchronization & Deadlocks
+Apply the Banker's Algorithm to determine if the following system state is safe: 5 processes (P0-P4) and 3 resource types (A, B, C).
+
+[Question 8] (Midterm 2024)
+Topic: Concurrency, Synchronization & Deadlocks
+Implement a bounded-buffer producer-consumer solution using counting semaphores and a mutex lock. What happens if the order of wait() calls is reversed?
+
+[Question 9] (Final Exam 2023)
+Topic: Process Management & CPU Scheduling
+Given 4 processes with arrival times [0, 1, 2, 3] and CPU bursts [8, 4, 9, 5], calculate average turnaround and waiting times under Round Robin scheduling (quantum = 4).
+
+[Question 10] (Midterm 2023)
+Topic: Process Management & CPU Scheduling
+Explain what information is stored in the Process Control Block (PCB). Why is context switching considered pure system overhead?
+
+[Question 11] (Final Exam 2022)
+Topic: Storage & File Systems
+Compare FCFS, SSTF, and SCAN disk scheduling algorithms for a disk with 200 cylinders given request queue: 98, 183, 37, 122, 14, 124, 65, 67 with initial head position at 53.

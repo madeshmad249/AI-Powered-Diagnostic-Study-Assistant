@@ -1,0 +1,19 @@
+CS301 STUDY NOTES - CHAPTER 4: STORAGE & FILE SYSTEM ARCHITECTURE
+Filename: OS_Chapter4_Storage_and_FileSystems.txt
+
+[Page 1]
+4.1 File Systems & Inodes
+A file is an abstract data type representing a contiguous logical address space.
+In Unix/Linux file systems, metadata for each file is encapsulated in an Inode (index node).
+An Inode contains:
+- File ownership, file mode (permissions), file size, timestamps (access, modification, change).
+- Direct block pointers pointing directly to disk data blocks.
+- Single indirect, double indirect, and triple indirect pointers to accommodate huge files.
+
+[Page 2]
+4.2 Disk Scheduling Algorithms
+Magnetic disks provide bulk secondary storage. Disk access time consists of Seek Time (time to move disk arm to target cylinder), Rotational Latency (time for sector to rotate under head), and Transfer Time.
+1. FCFS: Serves requests in arrival order. Fair, but does not optimize head movement.
+2. Shortest Seek Time First (SSTF): Selects the request with the minimum seek time from current head position. May cause starvation for distant requests.
+3. SCAN (Elevator Algorithm): Disk arm moves in one direction servicing requests until it reaches the end of the disk, then reverses direction.
+4. C-SCAN (Circular SCAN): Moves in one direction, but upon reaching the end, immediately returns to the beginning without servicing requests on the return trip, providing a more uniform wait time.

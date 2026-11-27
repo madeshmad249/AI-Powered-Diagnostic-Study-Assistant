@@ -1,0 +1,30 @@
+CS301 STUDY NOTES - CHAPTER 3: CONCURRENCY, SYNCHRONIZATION & DEADLOCKS
+Filename: OS_Chapter3_Concurrency_and_Deadlocks.txt
+
+[Page 1]
+3.1 The Critical Section Problem & Race Conditions
+A race condition occurs when multiple processes or threads read and write shared data concurrently, and the final outcome depends on the order of execution.
+To prevent race conditions, concurrent processes must be synchronized.
+The Critical Section is a segment of code in which the process accesses shared resources.
+Any valid solution to the critical-section problem must satisfy three strict requirements:
+1. Mutual Exclusion: If process P is executing in its critical section, then no other processes can be executing in their critical sections.
+2. Progress: If no process is executing in its critical section and some processes wish to enter, only those processes not in their remainder sections can participate in deciding who enters next.
+3. Bounded Waiting: There must be a bound on the number of times that other processes are allowed to enter their critical sections after a process has made a request to enter.
+
+[Page 2]
+3.2 Semaphores and Mutex Locks
+A Mutex (mutual exclusion) lock is the simplest synchronization tool. A process acquires the lock before entering a critical section and releases it upon exit.
+A Semaphore is an integer variable that, apart from initialization, is accessed only through two standard atomic operations: wait() (historically called P) and signal() (historically called V).
+- Counting Semaphore: Value can range over an unrestricted domain. Used to control access to a given resource consisting of a finite number of instances.
+- Binary Semaphore: Value can range only between 0 and 1. Behaves identically to a mutex lock.
+A major danger in using semaphores is Deadlock, where two or more processes are waiting indefinitely for an event that can be caused only by one of the waiting processes.
+
+[Page 3]
+3.3 Deadlock Conditions & Banker's Algorithm
+A deadlock situation can arise if and only if all four Coffman conditions hold simultaneously:
+1. Mutual Exclusion: At least one resource must be held in a non-shareable mode.
+2. Hold and Wait: A process must be concurrently holding at least one resource and waiting to acquire additional resources held by other processes.
+3. No Preemption: Resources cannot be preempted; a resource can be released only voluntarily by the process holding it.
+4. Circular Wait: A set {P0, P1, ..., Pn} of waiting processes must exist such that P0 is waiting for a resource held by P1, P1 is waiting for P2, and Pn is waiting for P0.
+
+Banker's Algorithm: An avoidance algorithm for systems with multiple instances of each resource type. It dynamically checks the resource-allocation state to ensure that a Circular Wait condition can never exist by testing for a Safe State.

@@ -1,0 +1,34 @@
+CS301 STUDY NOTES - CHAPTER 1: PROCESS MANAGEMENT & SCHEDULING
+Filename: OS_Chapter1_Processes_and_Threads.txt
+
+[Page 1]
+1.1 Process Lifecycle & Control Structures
+A process is a program in execution. It represents the fundamental unit of work in a modern time-sharing operating system.
+A process's state changes during its execution:
+- NEW: The process is being created.
+- READY: The process is waiting to be assigned to a CPU core.
+- RUNNING: Instructions are being executed on the CPU core.
+- WAITING (or BLOCKED): The process is waiting for some event (such as I/O completion or signal).
+- TERMINATED: The process has finished execution.
+
+The Process Control Block (PCB), also called a Task Control Block, stores all vital information associated with a specific process:
+- Process Identifier (PID)
+- Process State (Ready, Running, Waiting, etc.)
+- Program Counter (PC): Contains the address of the next machine instruction to execute.
+- CPU Registers: Accumulators, index registers, stack pointers, general-purpose registers.
+- CPU-Scheduling Information: Priorities, scheduling queue pointers.
+- Memory-Management Information: Page tables or segment tables.
+- Accounting & I/O Status Information: Amount of CPU used, list of open file descriptors.
+
+[Page 2]
+1.2 Context Switching Overhead & Mechanics
+Switching the CPU core to another process requires performing a state save of the current process and a state restore of a different process. This task is known as a Context Switch.
+When a context switch occurs, the kernel saves the context of the running process in its PCB and loads the saved context of the new process scheduled to run.
+Context switch time is pure overhead because the system does no useful work while switching. Speed varies from machine to machine, typically ranging from a few microseconds to several tens of microseconds, depending on memory speed, the number of registers, and the presence of special instructions (such as a single instruction to save all registers).
+
+[Page 3]
+1.3 CPU Scheduling Algorithms
+CPU scheduling is the basis of multi-programmed operating systems. By switching the CPU among processes, the OS makes the computer more productive.
+1. First-Come, First-Served (FCFS): The process that requests the CPU first is allocated the CPU first. Non-preemptive. Suffers severely from the Convoy Effect, where small processes wait behind a long CPU-burst process.
+2. Shortest-Job-First (SJF): Associates with each process the length of its next CPU burst. SJF is provably optimal in terms of minimizing average waiting time. However, predicting the future CPU burst length requires exponential smoothing.
+3. Round Robin (RR): Designed specifically for time-sharing systems. A small unit of time called a Time Quantum (or time slice), typically 10 to 100 milliseconds, is defined. If the time quantum is extremely large, RR degenerates into FCFS. If it is too small, context switch overhead dominates system performance.
